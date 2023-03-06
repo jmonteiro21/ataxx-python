@@ -6,6 +6,7 @@ from copy import deepcopy
 import time 
 import random 
 
+
 SQUARE_COUNT = 7 
 SQUARE_SIZE = 75 
 BLUE = (0,0,255) 
@@ -316,6 +317,7 @@ def greedy(board, piece):
             best_move = move        
     return best_move
 
+
 def evaluate1(board): 
     return piece_counter(board, player_1_piece) - piece_counter(board, player_2_piece)    
     
@@ -346,6 +348,7 @@ def minimax1(board, depth, max_player):
                 best_move = move
         return minEval, best_move 
     
+
 def minimax2(board, depth, max_player): 
     if depth == 0 or is_terminal_node(board):
         return evaluate2(board), board  
@@ -381,7 +384,6 @@ def random_move(board):
     
 
     
-         
 which_board = int(input("Board (you can see all the boards in the README file): "))
 if which_board == 1:
     board = create_board_1() 
@@ -402,6 +404,7 @@ elif which_board == 7:
 player_1 = int(input("Player 1(1: Human,2: Greedy, 3:  Minimax, 4: Random Moves): "))
 player_2 = int(input("Playes 2(1: Human,2: Greedy, 3: Minimax, 4: Random Moves): ")) 
 
+
 game_over = False 
 turn = 0                             
 pygame.init() 
@@ -414,8 +417,10 @@ clicks = 0
 player_1_piece = 1 
 player_2_piece = 2    
 
+
 if player_1 != 1 and player_2 != 1: 
     time.sleep(3)
+
 
 while not game_over:
     if turn == 0: 
@@ -793,13 +798,3 @@ while game_over:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
